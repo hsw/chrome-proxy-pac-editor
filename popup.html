@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Proxy.pac editor</title>
-
     <style>
-        #reset { float: right; }
+        body { font-size: 100%; }
     </style>
 </head>
 <body>
@@ -13,22 +12,19 @@
 <form id="app">
     <h3>Proxy Pac</h3>
 
-    <p>{{levelOfControl}} : {{mode}}</p>
+    <p id="status"></p>
 
-    <textarea cols="80" rows="24" autofocus v-model="pac" @change="onPacChange"></textarea><br/>
+    <textarea cols="80" rows="24" autofocus id="pac"></textarea><br/>
 
-    <a href="#" id="reset" @click.prevent="doReset">Reset</a>
+    <input type="button" id="btn-save" value="Set"/>
+    <input type="button" id="btn-disable" value="Unset"/>
+    <input type="button" id="btn-load" value="Load"/>
+    <input type="button" id="btn-reset" value="Default config"/>
 
-    <label>
-        <input type="checkbox" v-model="enabled" @change="onEnabledChange"/>
-        Enable
-    </label>
-
-    <pre v-if="errorDump">{{errorDump}}</pre>
+    <pre id="error"></pre>
 </form>
 
-<script src="vue.dev.js"></script>
-<script src="popup.js"></script>
+<script src="popup.native.js"></script>
 
 </body>
 </html>
