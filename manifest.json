@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "version": "0.1",
-  "name": "Proxy.pac edior",
+  "version": "0.2",
+  "name": "Proxy.pac editor",
   "description": "Edit proxy.pac configuration",
   "icons": {
     "128": "img/icon128.png"
@@ -17,6 +17,5 @@
   },
   "permissions": [
     "proxy"
-  ],
-  "content_security_policy": "default-src 'self'; script-src 'unsafe-eval'; style-src 'unsafe-inline';"
+  ]
 }
