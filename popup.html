@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proxy.pac editor</title>
+
+    <style>
+        #reset { float: right; }
+    </style>
+</head>
+<body>
+
+<form id="app">
+    <h3>Proxy Pac</h3>
+
+    <p>{{levelOfControl}} : {{mode}}</p>
+
+    <textarea cols="80" rows="24" autofocus v-model="pac" @change="onPacChange"></textarea><br/>
+
+    <a href="#" id="reset" @click.prevent="doReset">Reset</a>
+
+    <label>
+        <input type="checkbox" v-model="enabled" @change="onEnabledChange"/>
+        Enable
+    </label>
+
+    <pre v-if="errorDump">{{errorDump}}</pre>
+</form>
+
+<script src="vue.dev.js"></script>
+<script src="popup.js"></script>
+
+</body>
+</html>
